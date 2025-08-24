@@ -4,6 +4,7 @@
 <details>
 <summary>Start Dev/Dep Server</summary>
 First, run the development server:
+
 ```bash
 npm run dev
 pnpm dev
