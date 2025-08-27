@@ -1,11 +1,14 @@
 "use client"
 import React, { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import KindLinkHeader from "@/components/KindLinkHeader";
 
 
 
 const RegisterPage = () => {
+    const router = useRouter();
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -28,13 +31,29 @@ const RegisterPage = () => {
         }
         setLoading(true);
         try {
-            // Replace with your registration API call
-            // await registerUser(form);
-            // Redirect or show success message
-        } catch (err) {
-            setError("Registration failed. Please try again.");
+        const res = await fetch("/api/auth/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(form),
+        });
+
+        if (!res.ok) {
+            const data = await res.json();
+            throw new Error(data.error || "Registration failed");
+        }
+
+        // Auto login after successful register
+        await signIn("credentials", {
+            email: form.email,
+            password: form.password,
+            redirect: false,
+        });
+
+        router.push("/main/login");
+        } catch (err: any) {
+        setError(err.message || "Registration failed. Please try again.");
         } finally {
-            setLoading(false);
+        setLoading(false);
         }
     };
 
