@@ -2,7 +2,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import KindLinkHeader from '@/components/KindLinkHeader';
-import Navbar from '@/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,9 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className + ' bg-gray-900 min-h-screen'}>
-
-        <Navbar/>
-
+        <KindLinkHeader />
         {/* You can import and use components from the components directory here, e.g. <Navbar /> */}
         {children}
       </body>
