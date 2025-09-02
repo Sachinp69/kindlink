@@ -1,3 +1,5 @@
+// this model is for donation requests made by
+// user so other users can donate to them
 import mongoose , {Schema, model, models} from 'mongoose';
 import { RequestStatus,Category } from '@/types/enums';
 
@@ -7,7 +9,6 @@ export interface IDonationRequest {
   category: Category;
   quantity: number;
   location: string;
-  urgencyScore?: number;
   status: RequestStatus;
   createdBy: mongoose.Schema.Types.ObjectId;
   createdAt?: Date;
@@ -18,9 +19,8 @@ const donationRequestSchema = new Schema<IDonationRequest>(
     title: { type: String, required: true },
     description: { type: String },
     category: { type: String, enum: Object.values(Category), required: true },
-    quantity: { type: Number, required: true },
+    quantity: { type: Number, required: false },
     location: { type: String, required: true },
-    urgencyScore: { type: Number, default: 0 },
     status: { type: String, enum: Object.values(RequestStatus), default: RequestStatus.Pending},
     createdBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   },

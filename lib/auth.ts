@@ -53,10 +53,30 @@ export const authOptions: NextAuthOptions = {
       }
       return session;
     },
+    async signIn({ user, account }) {
+    if (account?.provider === "google") {
+      await connectToDb();
+      const existingUser = await User.findOne({ email: user.email });
+      if (!existingUser) {
+        await User.create({
+          email: user.email!,
+          password: "", // empty for Google users
+          role: "user",
+          contact: user.email,
+          name: user.name
+        });
+      }
+    }
+    return true;
+    },
+    async redirect({ url, baseUrl }) {
+    // after login always go to home dashboard
+    return `${baseUrl}/main/home`
+    },
   },
   pages: {
     signIn: "/login",
-    error: "/login",
+    error : "/login",
   },
   session: {
     strategy: "jwt",

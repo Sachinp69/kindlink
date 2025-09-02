@@ -1,20 +1,28 @@
+// filepath: app/main/layout.tsx
 import Navbar from '@/components/Navbar';
 import { Inter } from 'next/font/google';
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "@/lib/auth"; // adjust path if needed
 
 const inter = Inter({ subsets: ['latin'] });
 
-
-function layout({
+export default async function Layout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-        <div className={inter.className + ' bg-gray-900 min-h-screen'}>
-            <Navbar/>
-            {children}
-        </div>
-  )
-}
+  // Check for session
+  const session = await getServerSession(authOptions);
 
-export default layout
+  if (!session) {
+    redirect("/"); // send to login or landing page
+  }
+
+  return (
+    <div className={inter.className + ' bg-gray-900 min-h-screen'}>
+      <Navbar />
+      {children}
+    </div>
+  );
+}

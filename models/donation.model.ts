@@ -1,3 +1,5 @@
+//this model is for when a user donates to a donation request
+
 import mongoose , {Schema, model, models} from 'mongoose';
 import { DonationStatus } from '@/types/enums';
 

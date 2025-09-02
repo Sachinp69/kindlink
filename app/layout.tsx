@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className + ' bg-gray-900 min-h-screen'}>
-
+        <KindLinkHeader />
         {/* You can import and use components from the components directory here, e.g. <Navbar /> */}
         {children}
       </body>
