@@ -49,7 +49,7 @@ const RegisterPage = () => {
             redirect: false,
         });
 
-        router.push("/main/login");
+        router.push("/main/home");
         } catch (err: any) {
         setError(err.message || "Registration failed. Please try again.");
         } finally {

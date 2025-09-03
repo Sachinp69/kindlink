@@ -7,11 +7,18 @@ export async function POST(request: NextRequest) {
   try {
     const { email, password, name } = await request.json();
 
+    if(!name?.trim()){
+      return NextResponse.json(
+        {error : "Name is required"},
+        {status : 400}
+      )
+    }
+
     if (!email || !password) {
       return NextResponse.json(
         { error: "Email and password are required" },
         { status: 400 }
-      );
+      )
     }
 
     await connectToDb();
@@ -25,6 +32,7 @@ export async function POST(request: NextRequest) {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+    console.log("Register payload:", { email, name });
 
     await User.create({
       name,
