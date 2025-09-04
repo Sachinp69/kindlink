@@ -126,8 +126,8 @@ const Page = () => {
 
       {/* Overlay / Dialog */}
       {selectedCard && (
-        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center">
-          <div className="bg-slate-800 text-white rounded-xl shadow-lg max-w-lg w-full relative p-6">
+        <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center backdrop-blur-sm">
+          <div className="border-y-2 border-gray-800 bg-gradient-to-tr from-gray-800 via-gray-950 to-slate-900 text-white rounded-xl shadow-lg max-w-lg w-full relative p-6 backdrop-blur-sm">
             {/* Close button */}
             <button
               className="absolute top-3 right-3 text-gray-400 hover:text-white"
