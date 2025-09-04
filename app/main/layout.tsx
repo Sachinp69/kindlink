@@ -20,7 +20,7 @@ export default async function Layout({
   }
 
   return (
-    <div className={inter.className + ' bg-gray-900 min-h-screen'}>
+    <div className={inter.className + 'bg-gradient-to-tr from-gray-700 via-gray-950 to-slate-800 min-h-screen'}>
       <Navbar />
       {children}
     </div>

@@ -23,7 +23,7 @@ const RequestForm = () => {
     }
 
     try {
-      const res = await fetch("/api/donation-requests", {
+      const res = await fetch("/api/donation-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

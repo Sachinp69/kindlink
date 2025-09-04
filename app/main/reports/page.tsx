@@ -10,7 +10,7 @@ const RequestsPage = () => {
     const [isCreating, setIsCreating] = useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-900 text-white">
+        <div className="min-h-screen bg-gradient-to-tr from-gray-700 via-gray-950 to-slate-800 text-white">
 
             <PageHeader
         title="Report"

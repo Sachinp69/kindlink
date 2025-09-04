@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import KindLinkHeader from "@/components/KindLinkHeader";
-
+import BackgroundImage from "@/components/Background-image";
 
 
 const RegisterPage = () => {
@@ -58,9 +58,10 @@ const RegisterPage = () => {
     };
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-gray-900">
+        <div className="flex min-h-screen items-center justify-center ">
             <KindLinkHeader/>
-            <div className="w-full max-w-md p-8 bg-gray-900 rounded shadow">
+             <BackgroundImage src="https://www.rismedia.com/wp-content/uploads/2022/06/4_crucial_tips_donating-iStock-1339697803.jpg" />
+            <div className="w-full max-w-md border-transparent border-2 p-8 rounded-lg shadow-lg backdrop-blur-lg">
                 <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <input
@@ -110,7 +111,7 @@ const RegisterPage = () => {
                 </form>
                 <p className="mt-4 text-center text-sm">
                     Already have an account?{" "}
-                    <Link href="/login" className="text-blue-600 hover:underline">
+                    <Link href="/login" className="text-blue-300 hover:underline">
                         Login
                     </Link>
                 </p>
