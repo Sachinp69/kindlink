@@ -18,7 +18,7 @@ const RequestsPage = () => {
         leftComponent={<KindLinkHeader/> }
         rightComponent={<button 
                         onClick={() => setIsCreating(true)}
-                        className="bg-amber-500 text-white py-2 px-4 rounded-lg hover:bg-amber-600 hover:cursor-pointer"
+                        className="bg-amber-600 text-white py-2 px-4 rounded-lg hover:bg-amber-500 hover:cursor-pointer"
                     >
                         Create Report
                     </button>}
