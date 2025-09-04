@@ -4,16 +4,18 @@ interface CardProps {
   title: string;
   description?: string;
   image?: string;
+  onClick?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, image }) => {
+const Card: React.FC<CardProps> = ({ title, description, image, onClick }) => {
   return (
     <div
+      onClick={onClick}
       className="relative 
                  text-white bg-slate-800 rounded-2xl shadow-md 
-                 transition-all duration-300 ease-in-out 
-                 transform hover:scale-101 cursor-pointer overflow-hidden
-                 hover:shadow-[0_0_15px_5px_rgba(255,255,255,0.25)]"
+                 transition-all duration-200 ease-in-out 
+                 transform hover:scale-102 cursor-pointer overflow-hidden
+                 hover:shadow-[0_0_25px_5px_rgba(252,255,255,0.15)]"
     >
       {image && (
         <img
