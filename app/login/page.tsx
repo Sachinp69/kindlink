@@ -98,6 +98,7 @@ import Input from "@/components/Input";
 import "../globals.css";
 import GoogleLoginButton from "@/components/GoogleLoginButton";
 import KindLinkHeader from "@/components/KindLinkHeader";
+import BackgroundImage from "@/components/Background-image";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -141,9 +142,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
+    <div className="min-h-screen flex items-center justify-center ">
+         <BackgroundImage src="https://www.rismedia.com/wp-content/uploads/2022/06/4_crucial_tips_donating-iStock-1339697803.jpg" />
       <KindLinkHeader />
-      <div className="w-full max-w-md bg-gray-900 p-8 rounded-lg shadow-md backdrop-blur-md">
+      <div className="w-full max-w-md border-transparent border-2 p-8 rounded-lg shadow-lg backdrop-blur-lg">
         <h2 className="text-2xl font-bold mb-6 text-center">
           Sign in to your account
         </h2>
@@ -171,9 +173,9 @@ export default function LoginPage() {
           </Button>
           <GoogleLoginButton/>
         </form>
-        <p className="mt-6 text-center text-sm text-gray-600">
+        <p className="mt-6 text-center text-sm text-gray-100">
           Don't have an account?{" "}
-          <Link href="/register" className="text-blue-600 hover:underline">
+          <Link href="/register" className="text-blue-300 hover:underline">
             Register
           </Link>
         </p>

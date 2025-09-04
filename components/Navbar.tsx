@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
           </Link>
           <button
             onClick={() => setShowPopup(true)}
-            className="px-3 py-1 rounded bg-red-600 hover:bg-red-700 transition"
+            className="px-3 py-1 rounded bg-red-600 hover:bg-red-700 hover:cursor-pointer transition"
           >
             Logout
           </button>

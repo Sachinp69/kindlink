@@ -3,6 +3,7 @@ import { UserRole } from '@/types/enums';
 
 export interface IUser {
     email : string;
+    name : string;
     password :string;
     _id? : string;
     location? : string;
@@ -14,6 +15,7 @@ export interface IUser {
 
 const userSchema = new Schema<IUser>({
     email : {type : String, required : true, unique :true },
+    name : { type : String, required : true},
     password : { type : String },
     role : {type : String, enum : Object.values(UserRole), required : true},
     location: { type: String, required: false },
@@ -21,4 +23,4 @@ const userSchema = new Schema<IUser>({
     
 },{timestamps : true});
 
-export const User = models?.User || model<IUser>("User" , userSchema)
+export const User = models.User || model<IUser>("User" , userSchema)

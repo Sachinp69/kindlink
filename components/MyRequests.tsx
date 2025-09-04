@@ -16,7 +16,7 @@ const MyRequests = () => {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const res = await fetch("/api/donation-requests/mine");
+        const res = await fetch("/api/donation-request/mine");
         if (!res.ok) throw new Error("Failed to fetch requests");
         const data = await res.json();
         setRequests(data);
