@@ -7,7 +7,7 @@ type CreateReportCardProps = {
 
 const CreateReportCard: React.FC<CreateReportCardProps> = ({ onClose }) => {
     return (
-        <div className="fixed inset-0 flex items-center justify-center backdrop-blur-xl bg-opacity-50 z-50 ">
+        <div className="fixed inset-0 flex items-center justify-center backdrop-blur-lg bg-black/40 bg-opacity-50 z-50 ">
             <div className="rounded-2xl shadow-xl w-full max-w-lg p-6 relative border-2 border-y-amber-100 border-x-transparent">
                 <button 
                     onClick={onClose} 
@@ -23,7 +23,7 @@ const CreateReportCard: React.FC<CreateReportCardProps> = ({ onClose }) => {
                         </label>
                         <input 
                             type="text" 
-                            placeholder="Example: Donate Alcohol"
+                            placeholder="Example: Request Alcohol"
                             className="p-4 mt-1 block w-full bg-gray-900 h-10 rounded-lg shadow-sm focus:ring-amber-500 focus:border-amber-500 sm:text-sm"
                         />
                     </div>
