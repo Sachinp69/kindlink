@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ReportModal from "@/components/ReportModal";
+import HelpModal from "@/components/HelpModal";
 
 interface RequestCardProps {
   _id: string; // donation request id
@@ -23,6 +24,7 @@ export default function RequestCard({
   location,
   createdBy,
 }: RequestCardProps) {
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isReportOpen, setIsReportOpen] = useState(false);
 
   return (
@@ -47,7 +49,8 @@ export default function RequestCard({
             </div>
           
           <div className="">
-            <Button className="mt-3 border border-green-500/40 bg-green-600/5 hover:bg-green-500 mr-2">
+            <Button className="mt-3 border border-green-500/40 bg-green-600/5 hover:bg-green-500 mr-2"
+              onClick={()=> setIsHelpOpen(true)}>
               HELP
             </Button>
             <Button
@@ -59,7 +62,11 @@ export default function RequestCard({
         </CardContent>
       </Card>
 
-      {/* Report Modal */}
+      <HelpModal
+        isOpen={isHelpOpen}
+        onClose={() => setIsHelpOpen(false)}
+        helperEmail={createdBy?.email}
+      />
       <ReportModal
         isOpen={isReportOpen}
         onClose={() => setIsReportOpen(false)}
