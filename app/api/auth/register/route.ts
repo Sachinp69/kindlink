@@ -2,10 +2,11 @@ import { connectToDb } from "@/lib/db";
 import { User } from "@/models/user.model";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
+import { error } from "console";
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, password, name } = await request.json();
+    const { email, password, name, role } = await request.json();
 
     if(!name?.trim()){
       return NextResponse.json(
@@ -14,7 +15,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    if (!email || !password) {
+    if (!email || !password ) {
       return NextResponse.json(
         { error: "Email and password are required" },
         { status: 400 }
@@ -38,7 +39,7 @@ export async function POST(request: NextRequest) {
       name,
       email,
       password: hashedPassword,
-      role: "user", // default
+      role
     });
 
     return NextResponse.json(
@@ -47,6 +48,7 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     console.error("Error in registration:", error);
+    console.log(error)
     return NextResponse.json(
       { error: "Failed to register user" },
       { status: 500 }
