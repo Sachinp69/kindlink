@@ -73,7 +73,7 @@ const RequestForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg"
+          className="w-full bg-amber-600 hover:bg-amber-500 hover:cursor-pointer text-white py-2 rounded-lg"
         >
           {loading ? "Creating..." : "Create Request"}
         </button>

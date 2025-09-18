@@ -5,10 +5,13 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import KindLinkHeader from "@/components/KindLinkHeader";
 import BackgroundImage from "@/components/Background-image";
+import { UserRole } from "@/types/enums";
 
 
 const RegisterPage = () => {
     const router = useRouter();
+    const [role, setRole] = useState<UserRole>(UserRole.User)
+
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -34,7 +37,7 @@ const RegisterPage = () => {
         const res = await fetch("/api/auth/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(form),
+            body: JSON.stringify({...form,role}), 
         });
 
         if (!res.ok) {
@@ -73,6 +76,16 @@ const RegisterPage = () => {
                         required
                         className="w-full px-3 py-2 border rounded"
                     />
+                    
+                    <select
+                        value={role}
+                        onChange={e => setRole(e.target.value as UserRole)}
+                        className="input"
+                    >
+                        <option value={UserRole.User}>User</option>
+                        <option value={UserRole.NGO}>NGO</option>
+                        <option value={UserRole.Admin}>Admin</option>
+                    </select>
                     <input
                         type="email"
                         name="email"

@@ -5,6 +5,7 @@ import KindLinkHeader from "@/components/KindLinkHeader";
 import PageHeader from "@/components/PageHeader";
 import { X } from "lucide-react";
 import  Button  from "@/components/Button";
+import RequestsList from "@/components/RequestsList";
 
 interface CardData {
   title: string;
@@ -30,7 +31,7 @@ const Page = () => {
         subtitle=""
         leftComponent={<KindLinkHeader />}
       />
-
+      <div className=""><RequestsList/></div>
       {/* For You */}
       <section className="max-w-7xl sm:mx-auto md:mx-auto lg:mx-30">
         <h2 className="text-2xl font-bold text-gray-100 mb-6">For You</h2>

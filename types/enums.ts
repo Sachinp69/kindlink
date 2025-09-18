@@ -25,7 +25,7 @@ export enum RequestStatus {
 
 export enum ReportType {
   Spam = 'spam',
-  Fake = 'fake',
+  Fraud = 'fraud',
   Abuse = 'abuse'
 }
 

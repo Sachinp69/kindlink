@@ -30,6 +30,9 @@ const Navbar: React.FC = () => {
           <Link href="/main/donations" className="hover:text-amber-600 transition">
             Donations
           </Link>
+          <Link href="/main/profile" className="hover:text-amber-600 transition">
+            Profile
+          </Link>
           <button
             onClick={() => setShowPopup(true)}
             className="px-3 py-1 rounded bg-red-600 hover:bg-red-700 hover:cursor-pointer transition"
