@@ -26,7 +26,7 @@ const RequestList: React.FC<RequestListProps> = ({
 }) => {
     if (requests.length === 0) {
         return (
-            <div className="text-center text-gray-500 py-8">
+            <div className="text-center text-red-500 py-8">
                 No requests found.
             </div>
         );
@@ -37,7 +37,7 @@ const RequestList: React.FC<RequestListProps> = ({
             {requests.map((req) => (
                 <div
                     key={req.id}
-                    className="bg-white shadow rounded p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+                    className="bg-slate-950 shadow rounded p-4 m-2 flex flex-col md:flex-row md:items-center md:justify-between"
                 >
                     <div>
                         <h3 className="font-semibold text-lg">{req.title}</h3>
