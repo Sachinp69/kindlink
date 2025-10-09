@@ -24,8 +24,7 @@ const Page = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-gray-700 via-gray-950 to-slate-800 px-6 py-8 flex flex-col gap-y-12">
-      {/* Header */}
+    <div className="min-h-screen bg-gradient-to-tr from-gray-700 via-gray-950 to-slate-800 px-6 py-8 flex flex-col gap-y-12">      {/* Header */}
       <PageHeader
         title="Home Page"
         subtitle=""

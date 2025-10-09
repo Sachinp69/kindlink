@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react"; // for hamburger icons
 import KindLinkHeader from "./KindLinkHeader";
-import LoginPage from "@/app/login/page";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +24,7 @@ const Navbar: React.FC = () => {
             Home
           </Link>
           <Link href="/main/reports" className="hover:text-amber-600 transition">
-            Report
+            Reports
           </Link>
           <Link href="/main/donations" className="hover:text-amber-600 transition">
             Donations

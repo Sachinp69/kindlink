@@ -24,7 +24,8 @@ const Dropdown: React.FC<DropdownProps> = ({
     const [open, setOpen] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
-    //Adds an event listener to close the dropdown if a click occurs outside the component. Cleans up the listener on unmount
+    //Adds an event listener to close the dropdown if a click 
+    // occurs outside the component. Cleans up the listener on unmount
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (ref.current && !ref.current.contains(event.target as Node)) {

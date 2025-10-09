@@ -14,7 +14,7 @@ const GoogleLoginButton = () => {
         alt="Google logo"
         width={20}
         height={20}
-        className="drop-shadow-md" // ✅ Tailwind shadow for contrast
+        className="drop-shadow-md"
       />
       Sign in with Google
     </button>

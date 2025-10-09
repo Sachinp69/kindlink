@@ -29,7 +29,7 @@ export default function RequestCard({
 
   return (
     <>
-      <Card className="p-4 bg-cyan-800 shadow-md rounded-2xl bg-slate-950/30 background-transparent border border-amber-100/30 hover:scale-[1.02] transition-transform duration-200">
+      <Card className="p-4 shadow-md rounded-2xl bg-slate-950/30 background-transparent border border-amber-100/30 hover:scale-[1.02] transition-transform duration-200">
         <CardContent className="pl-2 pr-2">
           <h2 className="text-xl font-semibold">{title}</h2>
             <p className="text-sm">{description}</p>

@@ -5,10 +5,8 @@ import BackgroundImage from "@/components/Background-image";
 export default function HomePage() {
   return (
     <main className="relative flex flex-col items-center justify-center min-h-screen  overflow-hidden">
-      {/* Background Image */}
-       <BackgroundImage src="https://www.rismedia.com/wp-content/uploads/2022/06/4_crucial_tips_donating-iStock-1339697803.jpg" />
 
-      {/* Main Content */}
+       <BackgroundImage src="https://www.rismedia.com/wp-content/uploads/2022/06/4_crucial_tips_donating-iStock-1339697803.jpg" />
       
       <h1 className="text-4xl font-bold text-gray-200 mb-4 ">Welcome to KindLink</h1>
       <p className="text-lg text-gray-400 mb-8 text-center max-w-xl">
@@ -28,8 +26,6 @@ export default function HomePage() {
           Register
         </Link>
         </div>
-
-
     </main>
   );
 }
