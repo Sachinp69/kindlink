@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.888.0",
+    "@google/generative-ai": "^0.24.1",
     "@headlessui/react": "^2.2.8",
     "@supabase/supabase-js": "^2.57.4",
     "@uploadthing/react": "^7.3.3",
