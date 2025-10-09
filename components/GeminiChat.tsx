@@ -30,10 +30,10 @@ export default function GeminiChat(){
         <>
         <button onClick = {() => setOpen(!open)} className="fixed bottom-6 right-6 bg-orange-500 text-white p-4 rounded-full shadow-lg hover:bg-orange-600 transition hover:cursor-pointer"><MessageSquare size={24}/></button>
         {open &&(
-            <div className="fixed bottom-20 right-6 w-80 bg-gradient-to-r from-gray-900 to-gray-950 border shadow-xl rounded-2xl p-3 flex flex-col h-96">
+            <div className="shadow-lg fixed bottom-24 right-8 w-80 bg-gradient-to-r from-gray-900 to-gray-950 border shadow-xl rounded-2xl p-3 flex flex-col h-96">
                 <div className="flex justify-between items-center border-b pb-2 mb-2">
                     <h2 className="font-semibold text-orange-500">KindLink AI Assistant</h2>
-                    <button onClick={()=> setOpen(false)} className="text-gray-500 hover:text-orange-500">x</button>
+                    <button onClick={()=> setOpen(false)} className="text-gray-500 hover:text-orange-500 hover:cursor-pointer">x</button>
                 </div>
 
                  <div className="flex-grow overflow-y-auto mb-2">
