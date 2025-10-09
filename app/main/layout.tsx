@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import { Inter } from 'next/font/google';
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+import GeminiChat from "@/components/GeminiChat";
 import { authOptions } from "@/lib/auth"; // adjust path if needed
 
 const inter = Inter({ subsets: ['latin'] });
@@ -23,6 +24,8 @@ export default async function Layout({
     <div className={inter.className + 'bg-gradient-to-tr from-gray-700 via-gray-950 to-slate-800 min-h-screen'}>
       <Navbar />
       {children}
+      <GeminiChat />
     </div>
+   
   );
 }
