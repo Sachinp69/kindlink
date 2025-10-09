@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json(newRequest, { status: 201 });
-  } catch (err) {
+  } catch (error) {
     return NextResponse.json({ error: "Failed to create request" }, { status: 500 });
   }
 }

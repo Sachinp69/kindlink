@@ -16,7 +16,7 @@ export async function GET() {
 
     const requests = await DonationRequest.find({ createdBy: session.user.id }).sort({ createdAt: -1 });
     return NextResponse.json(requests);
-  } catch (err) {
+  } catch (error) {
     return NextResponse.json({ error: "Failed to fetch requests" }, { status: 500 });
   }
 }

@@ -1,5 +1,5 @@
 "use client"
-
+import Image from "next/image";
 import { useState } from "react";
 
 export default function DocumentUploader() {
@@ -57,7 +57,7 @@ export default function DocumentUploader() {
 
       {preview && (
         <div className="mt-4">
-          <img src={preview} alt="Preview" className="max-h-48 object-contain" />
+          <Image src={preview} alt="Preview" className="max-h-48 object-contain" />
         </div>
       )}
 

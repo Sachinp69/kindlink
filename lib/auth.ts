@@ -69,7 +69,7 @@ export const authOptions: NextAuthOptions = {
     }
     return true;
     },
-    async redirect({ url, baseUrl }) {
+    async redirect({ baseUrl }) {
     // after login always go to home dashboard
     return `${baseUrl}/main/home`
     },
